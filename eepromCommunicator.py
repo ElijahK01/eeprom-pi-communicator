@@ -3,9 +3,9 @@ import RPi.GPIO as gp
 
 gp.setwarnings(False)
 gp.setmode(gp.BCM)
-gp.setup(17, gp.OUT)
+gp.setup(17, gp.OUT) # comment out for single chip
 
-i = input('Chip select:  1 or 2: ')
+i = input('Chip select:  1 or 2: ') # comment out for single chip
 
 mode = True
 if int(i) == 1:
@@ -41,23 +41,3 @@ def change(i):
         mode = False
 
     gp.output(17, mode)
-
-
-
-    
-    
-    
-
-
-
-
-##def write(ADDRESS, data):
-##    bus.write_word_data(ADDRESS, 0x00, new_config)
-##
-##config = bus.read_i2c_block_data(ADDRESS, 0x00)
-##
-##print('Value : 0x' + format(config))
-##
-##new_config = 0b000000011
-##
-##write(0x50, new_config)
